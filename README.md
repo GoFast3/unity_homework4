@@ -22,5 +22,3 @@ bash
 Copy code
 git clone https://github.com/yourusername/BlockTowerGame.git
 Open the project in Unity.
-
-Press the Play button in Unity to start the game.
