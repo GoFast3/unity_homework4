@@ -6,41 +6,41 @@ using UnityEngine.SceneManagement;
 public class CondicionDeDerrota : MonoBehaviour
 {
     private Scene escena;
-    static int points = 0;  // ощърд мсфйшъ рчегеъ
+    static int points = 0;  // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
-    public static int maxPoints = 6; // осфш дрчегеъ щцшйк мдщйв мтбеш мщмб дба
+    public static int maxPoints = 6; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
 
     void Start()
     {
         escena = SceneManager.GetActiveScene();
-        
+
     }
 
-    void OnCollisionEnter2D(Collision2D col)  
+    void OnCollisionEnter2D(Collision2D col)
     {
-        // ан дървщре тн чебйд (щйщ мд аъ д-Tag Block)
+        // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅ-Tag Block)
         if (col.gameObject.CompareTag("Block"))
         {
-            points++;  // десфъ рчегд
-            Debug.Log("points: " + points+" maxPOintt "+maxPoints );
-           
-            // ан дщвре аъ осфш дрчегеъ дочсйомй, рйвщ мщмб дба
+            points++;  // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+            Debug.Log("points: " + points + " maxPOintt " + maxPoints);
+
+            // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ
             if (points >= maxPoints)
             {
                 points = 0;
                 Debug.Log("nextLevel!!!");
 
-                // афщш мдитп аъ дсцрд дбад мфй сцреъ щроцаеъ б-Build Settings
+                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ-Build Settings
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 int nextSceneIndex = currentSceneIndex + 1;
-                
 
-                // бегч ан йщ сцрд дбад
+
+                // пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
                 {
                     maxPoints += 6;
-                    Debug.Log("maxPoint iss:"+maxPoints);
-                    SceneManager.LoadScene(nextSceneIndex); // иетп аъ дсцрд дбад
+                    Debug.Log("maxPoint iss:" + maxPoints);
+                    SceneManager.LoadScene(nextSceneIndex); // пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                 }
                 else
                 {
@@ -49,13 +49,13 @@ public class CondicionDeDerrota : MonoBehaviour
             }
         }
 
-        // ан дчебйд февтъ бшйцфд
+        // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         if (col.gameObject.CompareTag("floor"))
         {
             Debug.Log("start over!");
             points = 0;
             Debug.Log(escena.name);
-            SceneManager.LoadScene(escena.name);  // иетп озгщ аъ аеъд сцрд
+            SceneManager.LoadScene(escena.name);  // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
         }
     }
 }
