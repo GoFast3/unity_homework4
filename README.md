@@ -19,5 +19,3 @@ The Block Tower Game is a 2D game where the goal is to build a tower of blocks o
 4. If the stack falls or a block is placed outside the base, the level will restart.
 5. After completing all three levels, you’ll reach the end screen, marking the game’s end.
 
-## Installation
-Clone this repository to your local machine:
