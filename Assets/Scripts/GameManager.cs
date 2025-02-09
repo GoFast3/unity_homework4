@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-        public int points = 0;
+    public int points = 0;
 
 
     [SerializeField] int maxPoints = 6; // Points needed to progress to the next level
